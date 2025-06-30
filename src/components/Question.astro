@@ -1,0 +1,16 @@
+---
+const { text, answer, children } = Astro.props;
+---
+
+<div style="margin-left: 1.5em; text-indent: -1.5em; margin-bottom: 1em;">
+  🔹 <strong>{text}</strong><br/>
+  ✅ <em>{answer}</em>
+  {children && (
+    <details style="display:inline;">
+      <summary style="display:inline; cursor:pointer; color:blue; margin-left: 0.5em;">
+        <strong>Learn more</strong>
+      </summary>
+      {children}
+    </details>
+  )}
+</div>
