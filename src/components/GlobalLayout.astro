@@ -1,0 +1,17 @@
+---
+import "../styles/tailwind.css";
+const { children } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <slot name="head" />
+  </head>
+  <body>
+    <main class="prose prose-invert max-w-none">
+      <p class="text-red-500 text-3xl font-bold">TAILWIND TEST ✅</p>
+      <slot />
+    </main>
+  </body>
+</html>

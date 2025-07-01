@@ -3,10 +3,23 @@ title: Test2
 description: Placeholder CBT
 ---
 
-# Test1
+import QuestionBlock from '../../components/QuestionBlock.tsx';
+import "../../styles/tailwind.css";
 
-1. **What is 2 + 2?**  
-   ✅ *4*
+<div className="space-y-1 max-w-none">
+  <QuestionBlock
+    client:load
+    id="q1"
+    question="Which AFI governs uniform wear?"
+    options={["AFI 36-2618", "AFI 1-1", "AFI 36-2903", "AFI 36-2502"]}
+    correctIndex={2}
+  />
 
-2. **What color is the sky?**  
-   ✅ *Blue*
+  <QuestionBlock
+    client:load
+    id="q2"
+    question="What rank is required to be a Section Chief?"
+    options={["E-5", "E-6", "E-7", "E-8"]}
+    correctIndex={2}
+  />
+</div>
