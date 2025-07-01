@@ -14,8 +14,10 @@ export default function QuestionBlock({ id, question, options, correctIndex }: P
     <div id={id} className="mb-8 not-prose">
       {/* Question line: fixed bullet + flexible text */}
       <div className="flex items-start mb-0.5">
-        <span className="text-blue-600 font-bold w-[1.5rem]">🔹</span>
-        <p className="text-2xl font-semibold mb-0.5">{question}</p>
+        <span className="text-blue-600 dark:text-blue-400 font-bold w-[1.5rem]">🔹</span>
+        <p className="text-2xl font-semibold mb-0.5 text-slate-900 dark:text-slate-100">
+          {question}
+        </p>
       </div>
 
       {/* Answers block: indented to align with start of question text (not bullet) */}
@@ -24,23 +26,27 @@ export default function QuestionBlock({ id, question, options, correctIndex }: P
           <div key={i} className="flex gap-2 items-center leading-none">
             <span className="w-5 flex items-center justify-center text-xl leading-none">
               {revealed && i === correctIndex ? (
-                <span className="text-green-600">✅</span>
+                <span className="text-green-600 dark:text-green-400">✅</span>
               ) : (
                 '•'
               )}
             </span>
-            <span className="text-xl leading-tight">{option}</span>
+            <span className="text-xl leading-tight text-slate-800 dark:text-slate-200">
+              {option}
+            </span>
           </div>
         ))}
       </div>
 
-     <button
-  onClick={() => setRevealed(true)}
-  className="mt-4 mb-20 px-4 py-1 border border-blue-600 text-blue-600 rounded font-medium shadow-sm hover:bg-blue-600 hover:text-white transition"
->
-  Show Answer
-</button>
-
+      {/* Button block: consistent margin and clean styling */}
+      <div className="ml-[1.5rem] mt-4">
+        <button
+          onClick={() => setRevealed(true)}
+          className="w-56 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-400 dark:text-black rounded-md transition"
+        >
+          Check Answer
+        </button>
+      </div>
     </div>
   );
 }
