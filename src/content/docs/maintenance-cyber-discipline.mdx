@@ -6,11 +6,22 @@ description: Maintenance Cyber Discipline
 import QuestionBlock from '../../components/QuestionBlock.tsx'
 import "../../styles/tailwind.css";
 
+{false && (
+  <QuestionBlock
+    client:load
+    id="q???"
+    question="What rank is required to be a Section Chief?"
+    options={["E-5", "E-6", "E-7", "E-8"]}
+    correctIndex={2}
+  />
+)}
+
 <div className="space-y-1 max-w-none">
   <QuestionBlock
     client:load
     id="q1"
-    question="True or False: An &quot;attack surface&quot; consists of specific access points where malware can be introduced or an adversary can gain access."
+    question="True or False: An &quot;attack surface&quot; consists of specific 
+    access points where malware can be introduced or an adversary can gain access."
     options={["True", "False"]}
     correctIndex={0}
   />
@@ -18,8 +29,17 @@ import "../../styles/tailwind.css";
   <QuestionBlock
     client:load
     id="q2"
-    question="A separation between the maintenance computer, weapon system, and outside world is known as a/an _____."
+    question="A separation between the maintenance computer, weapon system, and outside 
+    world is known as a/an _____."
     options={["attack surface", "air gap", "data cartridge", "none of these"]}
+    correctIndex={1}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q3"
+    question="A portable maintenance aid (PMA) is an example of a/an _____."
+    options={["indirect-attached", "direct-attached"]}
     correctIndex={1}
   />
 </div>
