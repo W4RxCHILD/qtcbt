@@ -6,7 +6,7 @@ export default defineConfig({
   sitemap: true,
   description: 'CBTs',
   components: {
-    layout: './src/components/GlobalLayout.astro',
+    docFooter: './src/components/BuyMeACoffee.astro',
   },
   sidebar: [
     {
@@ -14,11 +14,7 @@ export default defineConfig({
       items: [
         { label: 'Maintenance Cyber Discipline', link: '/docs/maintenance-cyber-discipline' },
         { label: 'Records Management', link: '/docs/records-management' },
-        { label: 'Test3', link: '/docs/test3' },
-        { label: 'Test4', link: '/docs/test4' },
-        { label: 'Test5', link: '/docs/test5' },
-        { label: 'Test6', link: '/docs/test6' },
-        { label: 'Test7', link: '/docs/test7' },
+        // etc.
       ]
     }
   ]
