@@ -11,7 +11,7 @@ export default defineConfig({
       label: 'All CBTs',
       items: [
         { label: 'Maintenance Cyber Discipline', link: '/docs/maintenance-cyber-discipline' },
-        { label: 'Test2', link: '/docs/test2' },
+        { label: 'Records Management', link: '/docs/records-management' },
         { label: 'Test3', link: '/docs/test3' },
         { label: 'Test4', link: '/docs/test4' },
         { label: 'Test5', link: '/docs/test5' },

@@ -1,0 +1,44 @@
+---
+title: Records Management
+description: Records Management
+---
+
+import QuestionBlock from '../../components/QuestionBlock.tsx'
+import "../../styles/tailwind.css";
+
+{false && (
+  <QuestionBlock
+    client:load
+    id="q???"
+    question="What rank is required to be a Section Chief?"
+    options={["E-5", "E-6", "E-7", "E-8"]}
+    correctIndexes={[2]}
+  />
+)}
+
+<div className="space-y-1 max-w-none">
+  <QuestionBlock
+    client:load
+    id="q1"
+    question="Ensuring proper collection, preservation, and safeguarding of federal records is the responsibility of _____."
+    options={["Unit Commanders", "Unit Records Managers", "Base Records Managers", "All Department of the Air Force Personnel (military, civilians, contractors)"]}
+    correctIndexes={[3]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q2"
+    question="Which statement is NOT true as it pertains to maintaining an effective records management program?"
+    options={["It's used to preserve our nation's history.", "It assists with mission planning and operations", "It allows for informed decision making at all levels within the chain.", "Individuals cannot be held liable for records not properly maintained/disposed of."]}
+    correctIndexes={[3]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q3"
+    question="Which of the following documents are considered a record?"
+    options={["E-5", "E-6", "E-7", "E-8"]}
+    correctIndexes={[2]}
+  />
+
+</div>

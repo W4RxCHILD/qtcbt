@@ -4,10 +4,10 @@ interface Props {
   id: string;
   question: string;
   options: string[];
-  correctIndex: number;
+  correctIndexes: number[];
 }
 
-export default function QuestionBlock({ id, question, options, correctIndex }: Props) {
+export default function QuestionBlock({ id, question, options, correctIndexes }: Props) {
   const [revealed, setRevealed] = useState(false);
 
   return (
@@ -25,7 +25,7 @@ export default function QuestionBlock({ id, question, options, correctIndex }: P
         {options.map((option, i) => (
           <div key={i} className="flex gap-2 items-center leading-none">
             <span className="w-5 flex items-center justify-center text-xl leading-none">
-              {revealed && i === correctIndex ? (
+              {revealed && correctIndexes.includes(i) ? (
                 <span className="text-green-600 dark:text-green-400">✅</span>
               ) : (
                 '•'
