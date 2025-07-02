@@ -2,6 +2,8 @@ import { defineConfig } from '@astrojs/starlight/config';
 
 export default defineConfig({
   title: 'QuickTurn CBT',
+  site: 'https://quickturncbt.com',
+  sitemap: true,
   description: 'CBTs',
   components: {
     layout: './src/components/GlobalLayout.astro',
