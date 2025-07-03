@@ -2,30 +2,30 @@ import { useEffect, useState } from 'react';
 
 export default function BmcPopup() {
   const [visible, setVisible] = useState(false);
+  const [raised, setRaised] = useState(0);
 
-  // Customize these values
-  const goal = 100;      // your funding goal (e.g. $100)
-const [raised, setRaised] = useState(0);
-
-useEffect(() => {
-  fetch('/donations.json')
-    .then(res => res.json())
-    .then(data => {
-      if (typeof data.total === 'number') {
-        setRaised(data.total);
-      }
-    })
-    .catch(err => {
-      console.error('Failed to load donation data:', err);
-    });
-}, []);
-
+  const goal = 100; // your funding goal
   const progress = Math.min((raised / goal) * 100, 100);
 
+  // Fetch the donations total from donations.json
+  useEffect(() => {
+    fetch('/donations.json')
+      .then((res) => res.json())
+      .then((data) => {
+        if (typeof data.total === 'number') {
+          setRaised(data.total);
+        }
+      })
+      .catch((err) => {
+        console.error('Failed to load donation data:', err);
+      });
+  }, []);
+
+  // Show the popup after 15 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(true);
-    }, 15000); // 1 seconds
+    }, 15000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -33,20 +33,22 @@ useEffect(() => {
   if (!visible) return null;
 
   return (
-    <div style={{
-      position: 'fixed',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      zIndex: 9999,
-      padding: '1.25rem 1.5rem',
-      background: '#1f1f1f',
-      color: 'white',
-      borderRadius: '0.75rem',
-      textAlign: 'center',
-      boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
-      maxWidth: '320px'
-    }}>
+    <div
+      style={{
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: 9999,
+        padding: '1.25rem 1.5rem',
+        background: '#1f1f1f',
+        color: 'white',
+        borderRadius: '0.75rem',
+        textAlign: 'center',
+        boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
+        maxWidth: '320px',
+      }}
+    >
       <button
         onClick={() => setVisible(false)}
         aria-label="Close"
@@ -59,7 +61,7 @@ useEffect(() => {
           fontSize: '1.2rem',
           fontWeight: 'bold',
           cursor: 'pointer',
-          color: '#ccc'
+          color: '#ccc',
         }}
       >
         &times;
@@ -69,18 +71,22 @@ useEffect(() => {
         Help keep the site up — even $1 helps.
       </p>
 
-      <div style={{
-        background: '#1a1a1a',
-        borderRadius: '0.375rem',
-        overflow: 'hidden',
-        height: '10px',
-        marginBottom: '0.5rem'
-      }}>
-        <div style={{
-          width: `${progress}%`,
-          backgroundColor: '#FFDD00',
-          height: '100%'
-        }} />
+      <div
+        style={{
+          background: '#1a1a1a',
+          borderRadius: '0.375rem',
+          overflow: 'hidden',
+          height: '10px',
+          marginBottom: '0.5rem',
+        }}
+      >
+        <div
+          style={{
+            width: `${progress}%`,
+            backgroundColor: '#FFDD00',
+            height: '100%',
+          }}
+        />
       </div>
 
       <p style={{ fontSize: '0.85rem', marginBottom: '0.75rem' }}>
@@ -98,7 +104,7 @@ useEffect(() => {
           color: '#000',
           fontWeight: 'bold',
           borderRadius: '0.375rem',
-          textDecoration: 'none'
+          textDecoration: 'none',
         }}
       >
         ☕ Buy Me A Coffee

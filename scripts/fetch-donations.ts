@@ -51,7 +51,7 @@ async function main() {
 
   const sheets = google.sheets({ version: 'v4', auth });
 
-  const range = 'Sheet1!A2:B'; // adjust if needed
+  const range = 'Sheet1!D2:D'; // adjust if needed
 
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId,
@@ -59,7 +59,7 @@ async function main() {
   });
 
   const rows = res.data.values || [];
-  const amounts = rows.map(row => parseFloat(row[1])).filter(x => !isNaN(x));
+  const amounts = rows.map(row => parseFloat(row[0])).filter(x => !isNaN(x));
   const total = amounts.reduce((sum, val) => sum + val, 0);
 
   const output = { total };
