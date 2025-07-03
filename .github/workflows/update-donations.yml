@@ -1,0 +1,63 @@
+name: Update BMC Donations
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # runs every hour
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install csvtojson node-fetch
+
+      - name: Fetch Google Sheet and convert to JSON
+        run: |
+          node <<EOF
+          const fs = require('fs');
+          const fetch = require('node-fetch');
+          const csv = require('csvtojson');
+
+          const SHEET_ID = '1_xmWT-2DiWmbIl4c4n8PvkqKbeQyjtsYFoNeUP2Fn9c';
+          const URL = \`https://docs.google.com/spreadsheets/d/\${SHEET_ID}/gviz/tq?tqx=out:csv\`;
+
+          fetch(URL)
+            .then(res => res.text())
+            .then(csvData => csv().fromString(csvData))
+            .then(json => {
+              const currentYear = new Date().getFullYear();
+              const total = json
+                .filter(entry => {
+                  const unix = parseInt(entry.Timestamp);
+                  const y = new Date(unix * 1000).getFullYear();
+                  return y === currentYear;
+                })
+                .reduce((sum, entry) => sum + parseFloat(entry.Amount || 0), 0);
+
+              const output = {
+                goal: 100,
+                raised: total,
+                year: currentYear,
+                percent: Math.min((total / 100) * 100, 100)
+              };
+
+              fs.writeFileSync('public/donations.json', JSON.stringify(output, null, 2));
+            });
+          EOF
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add public/donations.json
+          git commit -m "Update donations.json"
+          git push
