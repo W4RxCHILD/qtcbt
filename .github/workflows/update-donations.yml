@@ -1,63 +1,39 @@
-name: Update BMC Donations
+name: Update Donations
 
 on:
   schedule:
-    - cron: '0 * * * *'  # runs every hour
-  workflow_dispatch:
+    - cron: '*/5 * * * *'  # every 5 minutes
+  workflow_dispatch:     # manual run button in GitHub Actions tab
 
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install dependencies
-        run: npm install csvtojson node-fetch
+        run: npm install
 
-      - name: Fetch Google Sheet and convert to JSON
+      - name: Create .env file
         run: |
-          node <<EOF
-          const fs = require('fs');
-          const fetch = require('node-fetch');
-          const csv = require('csvtojson');
+          echo "GOOGLE_SERVICE_ACCOUNT_EMAIL=${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}" >> .env
+          echo "GOOGLE_PRIVATE_KEY=${{ secrets.GOOGLE_PRIVATE_KEY }}" >> .env
+          echo "GOOGLE_SHEET_ID=${{ secrets.GOOGLE_SHEET_ID }}" >> .env
 
-          const SHEET_ID = '1_xmWT-2DiWmbIl4c4n8PvkqKbeQyjtsYFoNeUP2Fn9c';
-          const URL = \`https://docs.google.com/spreadsheets/d/\${SHEET_ID}/gviz/tq?tqx=out:csv\`;
+      - name: Run donation fetch script
+        run: npx tsx scripts/fetch-donations.ts
 
-          fetch(URL)
-            .then(res => res.text())
-            .then(csvData => csv().fromString(csvData))
-            .then(json => {
-              const currentYear = new Date().getFullYear();
-              const total = json
-                .filter(entry => {
-                  const unix = parseInt(entry.Timestamp);
-                  const y = new Date(unix * 1000).getFullYear();
-                  return y === currentYear;
-                })
-                .reduce((sum, entry) => sum + parseFloat(entry.Amount || 0), 0);
-
-              const output = {
-                goal: 100,
-                raised: total,
-                year: currentYear,
-                percent: Math.min((total / 100) * 100, 100)
-              };
-
-              fs.writeFileSync('public/donations.json', JSON.stringify(output, null, 2));
-            });
-          EOF
-
-      - name: Commit and push
+      - name: Commit updated donations.json
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "qtCBT bot"
+          git config user.email "actions@github.com"
           git add public/donations.json
-          git commit -m "Update donations.json"
+          git commit -m "🤖 update donations.json" || echo "No changes to commit"
           git push
