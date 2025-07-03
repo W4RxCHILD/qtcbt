@@ -14,6 +14,7 @@ export default defineConfig({
         {
           label: 'All CBTs',
           items: [
+            { label: 'Cyber Awareness Challenge 2025', slug: 'cyber-awareness-challenge-2025' },
             { label: 'Maintenance Cyber Discipline', slug: 'maintenance-cyber-discipline' },
             { label: 'Records Management', slug: 'records-management' },
           ]
