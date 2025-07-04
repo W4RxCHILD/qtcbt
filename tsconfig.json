@@ -2,6 +2,7 @@
   "extends": "astro/tsconfigs/strict",
   "include": [
     ".astro/types.d.ts",
+    "src",                // ✅ Add this to pick up your `types/env.d.ts`
     "**/*"
   ],
   "exclude": [
@@ -9,6 +10,10 @@
   ],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "types": [
+      "astro/client",
+      "@cloudflare/workers-types"  // ✅ Add this for `KVNamespace` type
+    ]
   }
 }

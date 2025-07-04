@@ -10,7 +10,7 @@ export default function BmcPopup() {
   // Fetch the donations total from donations.json
   useEffect(() => {
     fetch('/donations.json')
-      .then((res) => res.json())
+      .then((res) => res.json() as Promise<{ total: number }>)
       .then((data) => {
         if (typeof data.total === 'number') {
           setRaised(data.total);
@@ -30,7 +30,7 @@ export default function BmcPopup() {
     const timer = setTimeout(() => {
       setVisible(true);
       sessionStorage.setItem('bmc-popup-shown', 'true');
-    }, 0); // 25 seconds
+    }, 25000); // 25 seconds
 
     return () => clearTimeout(timer);
   }, []);
