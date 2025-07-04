@@ -4,16 +4,18 @@ export default function BmcPopup() {
   const [visible, setVisible] = useState(false);
   const [raised, setRaised] = useState(0);
 
-  const goal = 100; // your funding goal
+  const goal = 100;
   const progress = Math.min((raised / goal) * 100, 100);
 
-  // Fetch the donations total from donations.json
+  // Fetch the donations total from the Cloudflare Worker
   useEffect(() => {
     fetch('https://update-donations.carlos-advictoriam.workers.dev/')
-      .then((res) => res.json() as Promise<{ total: number }>)
-      .then((data) => {
+      .then(async (res) => {
+        const data: { total: number } = await res.json();
         if (typeof data.total === 'number') {
           setRaised(data.total);
+        } else {
+          console.warn('No valid total found in Worker response:', data);
         }
       })
       .catch((err) => {
@@ -21,16 +23,15 @@ export default function BmcPopup() {
       });
   }, []);
 
-  // Show the popup after 25 seconds, but only once per session
+  // Show the popup after 25 seconds, only once per session
   useEffect(() => {
     const alreadyShown = sessionStorage.getItem('bmc-popup-shown');
-
     if (alreadyShown === 'true') return;
 
     const timer = setTimeout(() => {
       setVisible(true);
       sessionStorage.setItem('bmc-popup-shown', 'true');
-    }, 25000); // 25 seconds
+    }, 25000);
 
     return () => clearTimeout(timer);
   }, []);
