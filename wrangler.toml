@@ -1,0 +1,7 @@
+name = "update-donations"
+main = "index.js" # or "src/index.ts" if you're using TypeScript
+compatibility_date = "2024-07-04"
+
+[[kv_namespaces]]
+binding = "DONATION_TOTAL"
+id = "c6f0654294ba4bbca53481b333eaa830"
