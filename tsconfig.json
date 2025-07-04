@@ -2,7 +2,7 @@
   "extends": "astro/tsconfigs/strict",
   "include": [
     ".astro/types.d.ts",
-    "src",                // ✅ Add this to pick up your `types/env.d.ts`
+    "src",
     "**/*"
   ],
   "exclude": [
@@ -13,7 +13,11 @@
     "jsxImportSource": "react",
     "types": [
       "astro/client",
-      "@cloudflare/workers-types"  // ✅ Add this for `KVNamespace` type
-    ]
+      "@cloudflare/workers-types"
+    ],
+    "baseUrl": ".",                              // 👈 Required for `paths` to work
+    "paths": {
+      "@/*": ["src/*"]                           // 👈 This enables `@/components/...`
+    }
   }
 }
