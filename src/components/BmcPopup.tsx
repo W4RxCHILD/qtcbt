@@ -8,21 +8,27 @@ export default function BmcPopup() {
   const progress = Math.min((raised / goal) * 100, 100);
 
   useEffect(() => {
-    // Fetch donation total from public Google Sheets CSV
+    // Fetch and sum all donation amounts from public Google Sheets CSV
     fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSXAMSBaMtS5jhtmJ6vb6aCn5trlL6Lw9OT7QEkZQ1gi-EZ7UQb5kkLXeHor5LtsbYG7oOQW3vA1cas/pub?gid=0&single=true&output=csv')
       .then((res) => res.text())
       .then((csv) => {
         const lines = csv.trim().split('\n');
         const headers = lines[0].split(',');
-        const firstRow = lines[1]?.split(',');
+        const amountIndex = headers.findIndex(h => h.toLowerCase() === 'amount');
 
-        const totalIndex = headers.findIndex(h => h.toLowerCase().includes('amount'));
-
-        if (totalIndex !== -1 && firstRow && !isNaN(Number(firstRow[totalIndex]))) {
-          setRaised(Number(firstRow[totalIndex]));
-        } else {
-          console.error('Could not parse total from CSV:', { headers, firstRow });
+        if (amountIndex === -1) {
+          console.error('Amount column not found in CSV:', headers);
+          return;
         }
+
+        const rows = lines.slice(1);
+        const total = rows.reduce((sum, line) => {
+          const cols = line.split(',');
+          const amount = parseFloat(cols[amountIndex]);
+          return !isNaN(amount) ? sum + amount : sum;
+        }, 0);
+
+        setRaised(total);
       })
       .catch((err) => {
         console.error('Failed to fetch donation CSV:', err);
@@ -101,7 +107,7 @@ export default function BmcPopup() {
       </div>
 
       <p style={{ fontSize: '0.85rem', marginBottom: '0.75rem' }}>
-        ${raised} raised of ${goal} annual goal
+        ${raised.toFixed(2)} raised of ${goal} annual goal
       </p>
 
       <a
