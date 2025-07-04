@@ -16,7 +16,7 @@ export default function BmcPopup() {
         const headers = lines[0].split(',');
         const firstRow = lines[1]?.split(',');
 
-        const totalIndex = headers.findIndex(h => h.toLowerCase().includes('total'));
+        const totalIndex = headers.findIndex(h => h.toLowerCase().includes('amount'));
 
         if (totalIndex !== -1 && firstRow && !isNaN(Number(firstRow[totalIndex]))) {
           setRaised(Number(firstRow[totalIndex]));
