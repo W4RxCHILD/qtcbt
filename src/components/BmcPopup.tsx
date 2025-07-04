@@ -8,22 +8,24 @@ export default function BmcPopup() {
   const progress = Math.min((raised / goal) * 100, 100);
 
   useEffect(() => {
-    fetch('https://update-donations.carlos-advictoriam.workers.dev/')
-      .then((res) => res.json())
-      .then((data: unknown) => {
-        if (
-          typeof data === 'object' &&
-          data !== null &&
-          'total' in data &&
-          typeof (data as any).total === 'number'
-        ) {
-          setRaised((data as { total: number }).total);
+    // Fetch donation total from public Google Sheets CSV
+    fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSXAMSBaMtS5jhtmJ6vb6aCn5trlL6Lw9OT7QEkZQ1gi-EZ7UQb5kkLXeHor5LtsbYG7oOQW3vA1cas/pub?gid=0&single=true&output=csv')
+      .then((res) => res.text())
+      .then((csv) => {
+        const lines = csv.trim().split('\n');
+        const headers = lines[0].split(',');
+        const firstRow = lines[1]?.split(',');
+
+        const totalIndex = headers.findIndex(h => h.toLowerCase().includes('total'));
+
+        if (totalIndex !== -1 && firstRow && !isNaN(Number(firstRow[totalIndex]))) {
+          setRaised(Number(firstRow[totalIndex]));
         } else {
-          console.error('Invalid response format:', data);
+          console.error('Could not parse total from CSV:', { headers, firstRow });
         }
       })
       .catch((err) => {
-        console.error('Failed to load donation data:', err);
+        console.error('Failed to fetch donation CSV:', err);
       });
   }, []);
 
