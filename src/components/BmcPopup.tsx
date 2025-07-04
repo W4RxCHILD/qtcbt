@@ -7,15 +7,19 @@ export default function BmcPopup() {
   const goal = 100;
   const progress = Math.min((raised / goal) * 100, 100);
 
-  // Fetch the donations total from the Cloudflare Worker
   useEffect(() => {
     fetch('https://update-donations.carlos-advictoriam.workers.dev/')
-      .then(async (res) => {
-        const data: { total: number } = await res.json();
-        if (typeof data.total === 'number') {
-          setRaised(data.total);
+      .then((res) => res.json())
+      .then((data: unknown) => {
+        if (
+          typeof data === 'object' &&
+          data !== null &&
+          'total' in data &&
+          typeof (data as any).total === 'number'
+        ) {
+          setRaised((data as { total: number }).total);
         } else {
-          console.warn('No valid total found in Worker response:', data);
+          console.error('Invalid response format:', data);
         }
       })
       .catch((err) => {
@@ -23,7 +27,6 @@ export default function BmcPopup() {
       });
   }, []);
 
-  // Show the popup after 25 seconds, only once per session
   useEffect(() => {
     const alreadyShown = sessionStorage.getItem('bmc-popup-shown');
     if (alreadyShown === 'true') return;
