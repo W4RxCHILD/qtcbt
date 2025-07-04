@@ -6,6 +6,7 @@ description: Your Centralized CBT Resource
 import BmcPopup from '../../components/BmcPopup';
 
 <style>{`
+  /* Pulsing effect for the BMC button */
   @keyframes pulseBmcOnly {
     0% {
       transform: scale(1);
@@ -20,13 +21,48 @@ import BmcPopup from '../../components/BmcPopup';
       filter: drop-shadow(0 0 0px rgba(255, 221, 0, 0));
     }
   }
+
+  /* Breathing (scale) animation */
+  @keyframes bannerBreathe {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  /* Gentle clockwise/counterclockwise rotation */
+  @keyframes bannerRotate {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-3deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  .banner-outer {
+    animation: bannerRotate 30s linear infinite;
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .banner-inner {
+    animation: bannerBreathe 8s ease-in-out infinite;
+    display: block;
+    max-width: 100%;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0);
+    overflow: hidden;
+  }
 `}</style>
 
-<img
-  src="/images/banner.png"
-  alt="QuickTurn CBT Banner"
-  className="mx-auto my-8 w-full max-w-4xl rounded-xl shadow-lg"
-/>
+<div className="banner-outer">
+  <img
+    src="/images/banner.png"
+    alt="QuickTurn CBT Banner"
+    className="banner-inner w-full max-w-4xl"
+  />
+</div>
 
 <div style={{
   textAlign: 'center',
