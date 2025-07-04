@@ -45,7 +45,7 @@ export default function BmcPopup() {
     const timer = setTimeout(() => {
       setVisible(true);
       sessionStorage.setItem('bmc-popup-shown', 'true');
-    }, 0);
+    }, 25000);
 
     return () => clearTimeout(timer);
   }, []);
