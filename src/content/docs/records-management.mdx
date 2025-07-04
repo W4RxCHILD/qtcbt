@@ -3,8 +3,9 @@ title: Records Management
 description: Records Management
 ---
 
-import QuestionBlock from '../../components/QuestionBlock.tsx'
+import QuestionBlock from '../../components/QuestionBlock.tsx';
 import "../../styles/tailwind.css";
+import BmcPopup from '../../components/BmcPopup';
 
 {false && (
   <QuestionBlock
@@ -115,3 +116,5 @@ import "../../styles/tailwind.css";
 </div>
 
 ---
+
+<BmcPopup client:only="react" />

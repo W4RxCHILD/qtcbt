@@ -21,11 +21,16 @@ export default function BmcPopup() {
       });
   }, []);
 
-  // Show the popup after 15 seconds
+  // Show the popup after 25 seconds, but only once per session
   useEffect(() => {
+    const alreadyShown = sessionStorage.getItem('bmc-popup-shown');
+
+    if (alreadyShown === 'true') return;
+
     const timer = setTimeout(() => {
       setVisible(true);
-    }, 15000);
+      sessionStorage.setItem('bmc-popup-shown', 'true');
+    }, 0); // 25 seconds
 
     return () => clearTimeout(timer);
   }, []);

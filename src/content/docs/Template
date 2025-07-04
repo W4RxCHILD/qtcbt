@@ -1,10 +1,11 @@
 ---
-title: CBT Template
-description: Question Template with 20 Questions
+title: Template
+description: Template
 ---
 
-import QuestionBlock from '../../components/QuestionBlock.tsx'
+import QuestionBlock from '../../components/QuestionBlock.tsx';
 import "../../styles/tailwind.css";
+import BmcPopup from '../../components/BmcPopup';
 
 <div className="space-y-1 max-w-none">
   <QuestionBlock
@@ -170,24 +171,4 @@ import "../../styles/tailwind.css";
 
 ---
 
-<div style={{
-  marginTop: '3rem',
-  textAlign: 'center'
-}}>
-  <a
-    href="https://coff.ee/qtcbt"
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{
-      display: 'inline-block',
-      padding: '0.5rem 1rem',
-      backgroundColor: '#FFDD00',
-      color: '#000',
-      fontWeight: 'bold',
-      borderRadius: '0.375rem',
-      textDecoration: 'none'
-    }}
-  >
-    💰 Send It 💰
-  </a>
-</div>
+<BmcPopup client:only="react" />
