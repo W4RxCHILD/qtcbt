@@ -9,8 +9,8 @@ export default function BmcPopup() {
 
   // Fetch the donations total from donations.json
   useEffect(() => {
-    fetch('/donations.json')
-      .then((res) => res.json() as Promise<{ total: number }>)
+    fetch('https://update-donations.carlos-advictoriam.workers.dev/')
+      .then((res) => res.json() as Promise<{ total: number}>)
       .then((data) => {
         if (typeof data.total === 'number') {
           setRaised(data.total);
