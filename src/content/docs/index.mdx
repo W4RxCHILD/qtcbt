@@ -5,11 +5,29 @@ description: Your Centralized CBT Resource
 
 import BmcPopup from '../../components/BmcPopup';
 
+<style>{`
+  @keyframes pulseBmcOnly {
+    0% {
+      transform: scale(1);
+      filter: drop-shadow(0 0 0px rgba(255, 221, 0, 0));
+    }
+    50% {
+      transform: scale(1.06);
+      filter: drop-shadow(0 0 16px rgba(255, 221, 0, 0.9));
+    }
+    100% {
+      transform: scale(1);
+      filter: drop-shadow(0 0 0px rgba(255, 221, 0, 0));
+    }
+  }
+`}</style>
+
 <img
   src="/images/banner.png"
   alt="QuickTurn CBT Banner"
   className="mx-auto my-8 w-full max-w-4xl rounded-xl shadow-lg"
 />
+
 <div style={{
   textAlign: 'center',
   fontWeight: '500',
@@ -24,23 +42,26 @@ import BmcPopup from '../../components/BmcPopup';
 
 <div style={{
   marginTop: '3rem',
-  textAlign: 'center'
+  textAlign: 'center',
+  display: 'flex',
+  justifyContent: 'center',
 }}>
   <a
-    href="https://coff.ee/qtcbt"
+    href="https://www.buymeacoffee.com/qtcbt"
     target="_blank"
     rel="noopener noreferrer"
     style={{
-      display: 'inline-block',
-      padding: '0.5rem 1rem',
-      backgroundColor: '#FFDD00',
-      color: '#000',
-      fontWeight: 'bold',
-      borderRadius: '0.375rem',
-      textDecoration: 'none'
+      display: 'inline-block'
     }}
   >
-    ☕ Buy Me A Coffee
+    <img
+      src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=qtcbt&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff"
+      alt="Buy Me a Coffee"
+      style={{
+        height: '44px',
+        maxWidth: '100%',
+        animation: 'pulseBmcOnly 3.5s ease-in-out infinite',
+      }}
+    />
   </a>
 </div>
----
