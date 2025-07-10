@@ -42,7 +42,9 @@ export default function QuestionBlock({ id, question, options, correctIndexes }:
       <div className="ml-[1.5rem] mt-4">
         <button
           onClick={() => setRevealed(true)}
-          className="w-56 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-400 dark:text-black rounded-md transition"
+          className="w-56 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white 
+                     dark:bg-blue-300 dark:hover:bg-blue-200 dark:text-black 
+                     font-semibold rounded-md shadow border border-white dark:border-black transition"
         >
           Check Answer
         </button>
