@@ -1,0 +1,406 @@
+---
+title: Cyber Awareness Challenge 2025
+description: Cyber Awareness Challenge 2025
+---
+
+import QuestionBlock from '../../components/QuestionBlock.tsx';
+import "../../styles/tailwind.css";
+import BmcPopup from '../../components/BmcPopup';
+
+<div className="space-y-1 max-w-none">
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Unclassified Information</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q1"
+    question="Meeting Notes: Your meeting notes are Unclassified. This means that your notes:"
+    options={["May be released to the public.", "Do not have the potential to damage national security.", "Do not have the potential to affect the safety of personnel, missions, or systems.", "Do not require any markings."]}
+    correctIndexes={[1]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q2"
+    question="Personnel Roster: What type of information does this personnel roster represent?"
+    options={["Unclassified information", "Controlled Unclassified Information (CUI)", "For Official Use Only (FOUO) information"]}
+    correctIndexes={[1]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q3"
+    question="Personnel Roster: When e-mailing this personnel roster, which of the following should you do?"
+    options={["Encrypt the PII", "Digitally sign the e-mail", "Use your Government e-mail account"]}
+    correctIndexes={[0,1,2]}
+  />
+<br />
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Classified Information</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q4"
+    question="Select an area in which to edit an electronic report that is classified."
+    options={["Your Office", "Common Area", "Conference Room", "Designated Secure Area"]}
+    correctIndexes={[3]}
+  />
+<br />
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Sensitive Compartmented Information</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q5"
+    question="Select an action to take in response to compromised Sensitive Compartmented Information (SCI)."
+    options={["Gather more information", "Call your security point of contact (POC)", "Do nothing"]}
+    correctIndexes={[1]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q6"
+    question="Printer Clue: Dr. Dove printed a classified document and retrieved it promptly from  the printer. Does this behavior represent a security concern?"
+    options={["Yes", "No"]}
+    correctIndexes={[1]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q7"
+    question="Workstation Clue: Col. Cockatiel stored an unmarked document on the classified network. Does this behavior represent a security concern?"
+    options={["Yes", "No"]}
+    correctIndexes={[0]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q8"
+    question="Conversation Area Clue: Mr. Macaw and a colleague had a conversartion about a shared project in the SCIF after verifying no one was nearby. Does this behavior represent a security concern?"
+    options={["Yes", "No"]}
+    correctIndexes={[1]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q9"
+    question="Which of these individuals demonstrated behavior that could lead to the compromise of SCI?"
+    options={["Dr. Dove", "Col. Cockatiel", "Mr. Macaw"]}
+    correctIndexes={[1]}
+  />
+<br />
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Physical Facilities</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q10"
+    question="Open Office Area: Which of the following poses a physical security risk?"
+    options={["Posting an access roster in public view", "Using your Common Access Card (CAC) for facility access", "Challenging people without proper badges"]}
+    correctIndexes={[0]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q11"
+    question="Collateral Classified Space: Which of t he following must you do when using an unclassified laptopo in a colateral classified environment?"
+    options={["Use a wireless headset", "Disable the embedded camera, microphone, and Wi-Fi", "Use government-issued wired peripherals"]}
+    correctIndexes={[1,2]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q12"
+    question="Sensitive Compartmented Information Facility (SCIF): Which of the following must you do when working in a SCIF?"
+    options={["Verify that all personnel in lis", "Ensure that monitors do not provide unobstructed views", "Escort uncleared personnel and warn other in the SCIF"]}
+    correctIndexes={[0,1,2]}
+  />
+<br />
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Government Resources</h2>
+
+  <QuestionBlock
+    client:load
+    id="q13"
+    question="My troop is selling cookies. You need to help me!: Is this an appropriate use of government-furnished equipment (GFE)?"
+    options={["Yes", "No"]}
+    correctIndexes={[1]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q14"
+    question="My troop is selling cookies. You need to help me!: This is not an appropriate use of GFE. Why?"
+    options={["You should not use government e-mail to sell anything.", "You should use a digital signature when sending hyperlinks.", "You should not use unauthorized services, such as fileshare services, on GFE."]}
+    correctIndexes={[0,1,2]}
+  />
+<br />
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Identity Authentication</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q15"
+    question="How do you secure your accounts? (Alex)"
+    options={["Yes", "Maybe", "No"]}
+    correctIndexes={[0]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q16"
+    question="What kind of passwords do you use? (Bailey)"
+    options={["Yes", "Maybe", "No"]}
+    correctIndexes={[2]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q17"
+    question="How do you protect your Common Access Card (CAC) or Personal Identity Verification (PIV) Card? (Charlie)"
+    options={["Yes", "Maybe", "No"]}
+    correctIndexes={[0]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q18"
+    question="Select the individual who securely authenticates their identity."
+    options={["Alex", "Bailey", "Charlie"]}
+    correctIndexes={[0]}
+  />
+<br />
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Malicious Code</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q19"
+    question="How can malicious code spread? Select all that apply. Then select Submit."
+    options={["E-mail attachments", "Downloading files", "Visiting infected websites", "Virus scans"]}
+    correctIndexes={[0,1,2]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q20"
+    question="How can you prevent the download of malicious code? Select all that apply. Then select Submit."
+    options={["Scan external files before uploading to your device", "Research apps and their vulnerabilities before downloading", "Use the Preview Pane to view e-mails", "Disable automatic security patches"]}
+    correctIndexes={[0,1]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q21"
+    question="Which of the following may indicate a malicious code attack? Select all that apply. Then select Submit."
+    options={["The device re-starts following a system update.", "A new app suddenly appears on the device.", "The device slows down.", "A new tab appears in the Web browser."]}
+    correctIndexes={[1,2,3]}
+  />
+<br/ >
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Social Engineering</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q22"
+    question="Setup your e-mail account"
+    options={["2milePTrun@us.af.mil", "BluesMonday@us.af.mil", "VolunTold@us.af.mil", "DefundQA@us.af.mil"]}
+    correctIndexes={[0,1,2,3]}
+  />
+  <br/ >
+  <QuestionBlock
+    client:load
+    id="Q23"
+    question="Alert: E-mail Storage Quota Exceeded - How many social engineering indicators are present in this e-mail?"
+    options={["0", "1", "2", "3+"]}
+    correctIndexes={[3]}
+  />
+<br/ >
+  <QuestionBlock
+    client:load
+    id="Q24"
+    question="DoD Software shared &quot;Approved Software List&quot; with you"
+    options={["0", "1", "2", "3+"]}
+    correctIndexes={[3]}
+  />
+<br/ >
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Removeable Media</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q25"
+    question="You find an unlabeled thumb drive in the parking area outside your workplace. What should you do?"
+    options={["Plug it into your work computer to find out more about it", "Leave it alone", "Turn it in to your security officer"]}
+    correctIndexes={[2]}
+  />
+<br/ >
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Mobile Devices</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q26"
+    question="Which payment method poses the least risk?"
+    options={["Cash", "Digital credit card on smartphone"]}
+    correctIndexes={[0]}
+  />
+<br/ >
+  <QuestionBlock
+    client:load
+    id="q26 "
+    question="Which payment method poses the least risk?"
+    options={["Cash", "Digital credit card on smartphone"]}
+    correctIndexes={[0]}
+  />
+<br/ >
+  <QuestionBlock
+    client:load
+    id="q27"
+    question="Which method of getting online poses the least risk?"
+    options={["Approved mobile hotspot", "Coffee shop Wi-Fi"]}
+    correctIndexes={[0]}
+  />
+<br/ >
+  <QuestionBlock
+    client:load
+    id="q28"
+    question="Which action will keep DoD data the safest?"
+    options={["Change seats", "Leave the coffee shop"]}
+    correctIndexes={[1]}
+  />
+<br/ >
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Social Networking</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q29"
+    question="Create Post - Everyone should see the new superhero movie! The special effects are fantastic on the big screen!"
+    options={["Delete","Post"]}
+    correctIndexes={[0]}
+  />
+<br/ >
+  <QuestionBlock
+    client:load
+    id="q30"
+    question="Friend Request - Shaun S. 2 shared connections"
+    options={["Deny","Accept"]}
+    correctIndexes={[0]}
+  />
+<br/ >
+  <QuestionBlock
+    client:load
+    id="q31"
+    question="Share a Post - Soda Scare!"
+    options={["Keep Scrolling","Re-post"]}
+    correctIndexes={[0]}
+  />
+<br/ >
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Website Use</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q32"
+    question="Fwd: Save Thanksgiving - From Hope N."
+    options={["Research Claim","Research Link","Open Link"]}
+    correctIndexes={[0]}
+  />
+<br/ >
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Identity Management</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q33"
+    question="True or false? Voice-activated smart devices can collect and share your personal information."
+    options={["True","False"]}
+    correctIndexes={[0]}
+  />
+<br/ >
+  <QuestionBlock
+    client:load
+    id="q34"
+    question="True or false? The best way to keep your passport safe is to carry it with you."
+    options={["True","False"]}
+    correctIndexes={[1]}
+  />
+<br/ >
+  <QuestionBlock
+    client:load
+    id="q35"
+    question="True or false? You should monitor your credit card statements for unauthorized purchases."
+    options={["True","False"]}
+    correctIndexes={[0]}
+  />
+<br/ >
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Insider Threat</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q36"
+    question="Does Bob demonstrate potential insider threat indicators?"
+    options={["Yes", "No"]}
+    correctIndexes={[0]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q37"
+    question="How should Bob's colleagues respond?"
+    options={["Confront Bob", "Report Bob", "Avoid Bob"]}
+    correctIndexes={[1]}
+  />
+<br />
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Telework</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q38"
+    question="What step should be taken next to securely telework?"
+    options={["Connect peripherals", "Secure the area so others cannot view your monitor"]}
+    correctIndexes={[1]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q39"
+    question="Which of these personally-owned computer peripherals may be used with government-furnished equipment?"
+    options={["HDMI monitor", "USB keyboard", "Wireless mouse"]}
+    correctIndexes={[0,1]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q40"
+    question="Does this action pose a potential security risk? &quot;Smart Speaker near workspace&quot;"
+    options={["Yes", "No"]}
+    correctIndexes={[0]}
+  />
+<br />
+  <h2 className="text-x1 font-semi-bold mt-6 mb-2"> Home Computer Security</h2>
+<br />
+  <QuestionBlock
+    client:load
+    id="q41"
+    question="Virus and Threat Protection - None Detected - Install?"
+    options={["Yes", "No"]}
+    correctIndexes={[0]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q42"
+    question="User Accounts - Would you like to create a user profile?"
+    options={["Yes", "No"]}
+    correctIndexes={[0]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q43"
+    question="Firewall Protection - Would you like to enable firewall?"
+    options={["Yes", "No"]}
+    correctIndexes={[0]}
+  />
+<br />
+  <QuestionBlock
+    client:load
+    id="q12"
+    question="Question 12"
+    options={["A", "B", "C", "D"]}
+    correctIndexes={[3]}
+  />
+</div>
+
+---
+
+<BmcPopup client:only="react" />
