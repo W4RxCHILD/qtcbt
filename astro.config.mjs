@@ -21,8 +21,7 @@ export default defineConfig({
         {
           label: 'Coming Soon',
           items: [
-            { label: 'TMDE', slug: 'tmde' },
-            { label: 'Brandon Act', slug: 'brandon-act' },
+            { label: 'Survival, Evasion, Resistance, and Escape', slug: 'survival-evasion-resistance-and-escape' },
             { label: 'Cyber Awareness Challenge 2025 (Knowledge Check Option)', slug: 'cyber-awareness-challenge-2025-knowledge-check-option' },
           ],
         },
