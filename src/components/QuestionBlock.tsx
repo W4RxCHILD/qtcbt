@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Props {
   id: string;
@@ -10,9 +10,22 @@ interface Props {
 export default function QuestionBlock({ id, question, options, correctIndexes }: Props) {
   const [revealed, setRevealed] = useState(false);
 
+  useEffect(() => {
+    // Listen for global 'revealAllQuestions' event
+    const revealHandler = () => setRevealed(true);
+    const resetHandler = () => setRevealed(false);
+
+    window.addEventListener('revealAllQuestions', revealHandler);
+    window.addEventListener('resetAllQuestions', resetHandler);
+
+    return () => {
+      window.removeEventListener('revealAllQuestions', revealHandler);
+      window.removeEventListener('resetAllQuestions', resetHandler);
+    };
+  }, []);
+
   return (
     <div id={id} className="mb-8 not-prose">
-      {/* Question line: fixed bullet + flexible text */}
       <div className="flex items-start mb-0.5">
         <span className="text-blue-600 dark:text-blue-400 font-bold w-[1.5rem]">🔹</span>
         <p className="text-2xl font-semibold mb-0.5 text-slate-900 dark:text-slate-100">
@@ -20,7 +33,6 @@ export default function QuestionBlock({ id, question, options, correctIndexes }:
         </p>
       </div>
 
-      {/* Answers block: indented to align with start of question text (not bullet) */}
       <div className="ml-[1.5rem] space-y-l">
         {options.map((option, i) => (
           <div key={i} className="flex gap-2 items-center leading-none">
@@ -38,7 +50,6 @@ export default function QuestionBlock({ id, question, options, correctIndexes }:
         ))}
       </div>
 
-      {/* Button block: consistent margin and clean styling */}
       <div className="ml-[1.5rem] mt-4">
         <button
           onClick={() => setRevealed(true)}

@@ -29,8 +29,11 @@ description: ${title}
 ---
 
 import QuestionBlock from '../../components/QuestionBlock.tsx';
+import QuizControls from '../../components/QuizControls.tsx';
 import "../../styles/tailwind.css";
 import BmcPopup from '../../components/BmcPopup';
+
+<QuizControls client:load />
 
 <div className="space-y-1 max-w-none">
 `;
