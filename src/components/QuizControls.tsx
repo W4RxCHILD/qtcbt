@@ -1,21 +1,20 @@
 export default function QuizControls() {
-  const sharedButtonClasses = `flex items-center justify-center w-full h-12 px-4 
-    text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 
+  const sharedButtonClasses = `w-56 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white 
     dark:bg-blue-300 dark:hover:bg-blue-200 dark:text-black 
-    shadow transition whitespace-nowrap leading-none`;
+    font-semibold rounded-md shadow border border-white dark:border-black transition`;
 
   return (
     <div className="sticky top-4 z-10 flex justify-end pr-4 sm:pr-8 md:pr-16">
-      <div className="w-56 bg-transparent p-0 m-0">
+      <div className="flex flex-col sm:flex-row gap-2 bg-transparent p-0 m-0">
         <button
           onClick={() => window.dispatchEvent(new Event('revealAllQuestions'))}
-          className={`${sharedButtonClasses} rounded-t-md border border-white border-b-0 dark:border-black`}
+          className={sharedButtonClasses}
         >
           Check All
         </button>
         <button
           onClick={() => window.dispatchEvent(new Event('resetAllQuestions'))}
-          className={`${sharedButtonClasses} rounded-b-md border border-white border-t-0 dark:border-black`}
+          className={sharedButtonClasses}
         >
           Reset
         </button>
