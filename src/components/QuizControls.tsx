@@ -1,22 +1,22 @@
 export default function QuizControls() {
-  const buttonBase = `min-w-[8rem] h-12 px-4 
-    bg-blue-600 hover:bg-blue-700 text-white 
+  const sharedButtonClasses = `inline-flex items-center justify-center 
+    w-[12rem] h-[3.5rem] px-4 text-base font-semibold text-white 
+    bg-blue-600 hover:bg-blue-700 
     dark:bg-blue-300 dark:hover:bg-blue-200 dark:text-black 
-    font-semibold rounded-md shadow border border-white dark:border-black 
-    text-center transition`;
+    shadow transition rounded-md border border-white dark:border-black`;
 
   return (
-    <div className="sticky top-4 z-10 flex justify-center pr-4 sm:pr-8 md:pr-16">
-      <div className="flex gap-4">
+    <div className="sticky top-4 z-10 flex justify-center mt-4">
+      <div className="flex gap-4 items-center">
         <button
           onClick={() => window.dispatchEvent(new Event('revealAllQuestions'))}
-          className={buttonBase}
+          className={sharedButtonClasses}
         >
           Check All
         </button>
         <button
           onClick={() => window.dispatchEvent(new Event('resetAllQuestions'))}
-          className={buttonBase}
+          className={sharedButtonClasses}
         >
           Reset All
         </button>
