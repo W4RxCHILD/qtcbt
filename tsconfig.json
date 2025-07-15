@@ -1,23 +1,14 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [
-    ".astro/types.d.ts",
-    "src",
-    "**/*"
-  ],
-  "exclude": [
-    "dist"
-  ],
+  "include": [".astro/types.d.ts", "src", "**/*"],
+  "exclude": ["dist"],
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "types": [
-      "astro/client",
-      "@cloudflare/workers-types"
-    ],
-    "baseUrl": ".",                              // 👈 Required for `paths` to work
+    "types": ["astro/client", "@cloudflare/workers-types"],
+    "baseUrl": ".", // 👈 Required for `paths` to work
     "paths": {
-      "@/*": ["src/*"]                           // 👈 This enables `@/components/...`
+      "@/*": ["src/*"] // 👈 This enables `@/components/...`
     }
   }
 }

@@ -1,0 +1,13 @@
+ID,Question,Option0,Option1,Option2,Option3,Option4,Option5,Option6,Option7,Option8,Option9,CorrectIndex
+q1,True or False: An &quot;attack surface&quot; consists of specific access points where malware can be introduced or an adversary can gain access.,True,False,,,,,,,,,0
+q2,"A separation between the maintenance computer, weapon system, and outside world is known as a/an _____.",attack surface,air gap,data cartridge,none of these,,,,,,,1
+q3,A portable maintenance aid (PMA) is an example of a/an _____.,indirect-attached,direct-attached,,,,,,,,,1
+q4,True or False: Nuissance malware is intentional and targeted specifically towards an Air Force system by an adversary.,True,False,,,,,,,,,1
+q5,Identify an example of an attack surface on a computer:,supply chain,air gap media,radio frequency,all of these,,,,,,,3
+q6,True or False: Defense in Depth refers to the practice of using several defensive layers of protective measures to safeguard our weapons systems.,True,False,,,,,,,,,0
+q7,Equipment risks include:,shared user accounts,unauthorized software,software/hardware configuration changes,lack of virus scanning,all of these,,,,,,4
+q8,True or False: Read-only is the safest media to use when controlling data transfer risk.,True,False,,,,,,,,,0
+q9,True or False: It is ok to assume that external systems are clean becausne else should have already ran the scans.,True,False,,,,,,,,,1
+q10,Which procedure applies to cellphone/mp3 player,scan before use,refrain from connecting to a PMA,report incident immediately,,,,,,,,1
+q11,Which procedure applies to notification of virus?,scan before use,refrain from connecting to a PMA,report incident immediately,,,,,,,,2
+q12,Which procedure applies to disc from manufacturer.,scan before use,refrain from connecting to a PMA,report incident immediately,,,,,,,,0

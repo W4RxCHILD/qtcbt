@@ -7,116 +7,175 @@ import QuestionBlock from '../../components/QuestionBlock.tsx';
 import "../../styles/tailwind.css";
 import BmcPopup from '../../components/BmcPopup';
 
-{false && (
-  <QuestionBlock
-    client:load
-    id="q???"
-    question="What rank is required to be a Section Chief?"
-    options={["E-5", "E-6", "E-7", "E-8"]}
-    correctIndexes={[2]}
-  />
-)}
-
 <div className="space-y-1 max-w-none">
   <QuestionBlock
     client:load
     id="q1"
-    question="True or False: An &quot;attack surface&quot; consists of specific 
-    access points where malware can be introduced or an adversary can gain access."
-    options={["True", "False"]}
+    question="True or False: An &quot;attack surface&quot; consists of specific access points where malware can be introduced or an adversary can gain access."
+    options={
+      [
+      "True",
+      "False"
+      ]
+    }
     correctIndexes={[0]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q2"
-    question="A separation between the maintenance computer, weapon system, and outside 
-    world is known as a/an _____."
-    options={["attack surface", "air gap", "data cartridge", "none of these"]}
+    question="A separation between the maintenance computer, weapon system, and outside world is known as a/an _____."
+    options={
+      [
+      "attack surface",
+      "air gap",
+      "data cartridge",
+      "none of these"
+      ]
+    }
     correctIndexes={[1]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q3"
     question="A portable maintenance aid (PMA) is an example of a/an _____."
-    options={["indirect-attached", "direct-attached"]}
+    options={
+      [
+      "indirect-attached",
+      "direct-attached"
+      ]
+    }
     correctIndexes={[1]}
   />
-<br />
-<QuestionBlock
+  <br />
+  <QuestionBlock
     client:load
     id="q4"
-    question="True or False: Nuissance malware is intentional and targeted specifically 
-    towards an Air Force system by an adversary."
-    options={["True", "False"]}
+    question="True or False: Nuissance malware is intentional and targeted specifically towards an Air Force system by an adversary."
+    options={
+      [
+      "True",
+      "False"
+      ]
+    }
     correctIndexes={[1]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q5"
     question="Identify an example of an attack surface on a computer:"
-    options={["supply chain", "air gap media", "radio frequency", "all of these"]}
+    options={
+      [
+      "supply chain",
+      "air gap media",
+      "radio frequency",
+      "all of these"
+      ]
+    }
     correctIndexes={[3]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q6"
     question="True or False: Defense in Depth refers to the practice of using several defensive layers of protective measures to safeguard our weapons systems."
-    options={["True", "False"]}
+    options={
+      [
+      "True",
+      "False"
+      ]
+    }
     correctIndexes={[0]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q7"
     question="Equipment risks include:"
-    options={["shared user accounts", "unauthorized software", "software/hardware configuration changes", "lack of virus scanning", "all of these"]}
+    options={
+      [
+      "shared user accounts",
+      "unauthorized software",
+      "software/hardware configuration changes",
+      "lack of virus scanning",
+      "all of these"
+      ]
+    }
     correctIndexes={[4]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q8"
     question="True or False: Read-only is the safest media to use when controlling data transfer risk."
-    options={["True", "False"]}
+    options={
+      [
+      "True",
+      "False"
+      ]
+    }
     correctIndexes={[0]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q9"
     question="True or False: It is ok to assume that external systems are clean becausne else should have already ran the scans."
-    options={["True", "False"]}
+    options={
+      [
+      "True",
+      "False"
+      ]
+    }
     correctIndexes={[1]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q10"
     question="Which procedure applies to cellphone/mp3 player"
-    options={["scan before use", "refrain from connecting to a PMA", "report incident immediately"]}
+    options={
+      [
+      "scan before use",
+      "refrain from connecting to a PMA",
+      "report incident immediately"
+      ]
+    }
     correctIndexes={[1]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q11"
     question="Which procedure applies to notification of virus?"
-    options={["scan before use", "refrain from connecting to a PMA", "report incident immediately"]}
+    options={
+      [
+      "scan before use",
+      "refrain from connecting to a PMA",
+      "report incident immediately"
+      ]
+    }
     correctIndexes={[2]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q12"
     question="Which procedure applies to disc from manufacturer."
-    options={["scan before use", "refrain from connecting to a PMA", "report incident immediately"]}
+    options={
+      [
+      "scan before use",
+      "refrain from connecting to a PMA",
+      "report incident immediately"
+      ]
+    }
     correctIndexes={[0]}
   />
+  <br />
 </div>
+
 ---
 
 <BmcPopup client:only="react" />

@@ -13,7 +13,10 @@ export default defineConfig({
         {
           label: 'All CBTs',
           items: [
-            { label: 'Cyber Awareness Challenge 2025 (Standard Challenge)', slug: 'cyber-awareness-challenge-2025-standard-challenge' },
+            {
+              label: 'Cyber Awareness Challenge 2025 (Standard Challenge)',
+              slug: 'cyber-awareness-challenge-2025-standard-challenge',
+            },
             { label: 'Maintenance Cyber Discipline', slug: 'maintenance-cyber-discipline' },
             { label: 'Records Management', slug: 'records-management' },
           ],
@@ -21,8 +24,15 @@ export default defineConfig({
         {
           label: 'Coming Soon',
           items: [
-            { label: 'Survival, Evasion, Resistance, and Escape', slug: 'survival-evasion-resistance-and-escape' },
-            { label: 'Cyber Awareness Challenge 2025 (Knowledge Check Option)', slug: 'cyber-awareness-challenge-2025-knowledge-check-option' },
+            {
+              label: 'Survival, Evasion, Resistance, and Escape',
+              slug: 'survival-evasion-resistance-and-escape',
+            },
+            {
+              label: 'Cyber Awareness Challenge 2025 (Knowledge Check Option)',
+              slug: 'cyber-awareness-challenge-2025-knowledge-check-option',
+            },
+            { label: 'Force Protection', slug: 'force-protection' },
           ],
         },
       ],

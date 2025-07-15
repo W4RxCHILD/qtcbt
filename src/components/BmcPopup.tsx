@@ -15,9 +15,7 @@ export default function BmcPopup() {
       .then((csv) => {
         const lines = csv.trim().split('\n');
         const headers = lines[0].split(',');
-        const amountIndex = headers.findIndex(
-          (h) => h.toLowerCase() === 'amount'
-        );
+        const amountIndex = headers.findIndex((h) => h.toLowerCase() === 'amount');
 
         if (amountIndex === -1) {
           console.error('Amount column not found in CSV:', headers);

@@ -4,115 +4,145 @@ description: Records Management
 ---
 
 import QuestionBlock from '../../components/QuestionBlock.tsx';
-import "../../styles/tailwind.css";
+import '../../styles/tailwind.css';
 import BmcPopup from '../../components/BmcPopup';
-
-{false && (
-  <QuestionBlock
-    client:load
-    id="q???"
-    question="What rank is required to be a Section Chief?"
-    options={["E-5", "E-6", "E-7", "E-8"]}
-    correctIndexes={[2]}
-  />
-)}
 
 <div className="space-y-1 max-w-none">
   <QuestionBlock
     client:load
     id="q1"
     question="Ensuring proper collection, preservation, and safeguarding of federal records is the responsibility of _____."
-    options={["Unit Commanders", "Unit Records Managers", "Base Records Managers", "All Department of the Air Force Personnel (military, civilians, contractors)"]}
+    options={[
+      'Unit Commanders',
+      'Unit Records Managers',
+      'Base Records Managers',
+      'All Department of the Air Force Personnel (military, civilians, contractors)',
+    ]}
     correctIndexes={[3]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q2"
     question="Which statement is NOT true as it pertains to maintaining an effective records management program?"
-    options={["It's used to preserve our nation's history.", "It assists with mission planning and operations", "It allows for informed decision making at all levels within the chain.", "Individuals cannot be held liable for records not properly maintained/disposed of."]}
+    options={[
+      "It's used to preserve our nation's history.",
+      'It assists with mission planning and operations',
+      'It allows for informed decision making at all levels within the chain.',
+      'Individuals cannot be held liable for records not properly maintained/disposed of.',
+    ]}
     correctIndexes={[3]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q3"
     question="Which of the following documents are considered a record?"
-    options={["Routing Slip", "Air Force Times", "CMSAF Post on Twitter", "Signed Appointment Letter", "Selfie with the First Sergeant", "AF Achievement Medal with Order Number"]}
-    correctIndexes={[2,3,5]}
+    options={[
+      'Routing Slip',
+      'Air Force Times',
+      'CMSAF Post on Twitter',
+      'Signed Appointment Letter',
+      'Selfie with the First Sergeant',
+      'AF Achievement Medal with Order Number',
+    ]}
+    correctIndexes={[2, 3, 5]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q4"
     question="This type of document is created or received during peacetime, wartime, or contingency operations and once released it cannot be altered."
-    options={["Draft", "Record", "Non-Record", "Personal Record"]}
+    options={['Draft', 'Record', 'Non-Record', 'Personal Record']}
     correctIndexes={[1]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q5"
     question="Which of the following statements most accurately describes a permanent record?"
-    options={["Destroyed after a specific time period", "Has enduring historical value", "Held anywhere from 1 day to 100 years", "Kept forever", "Transferred to National Archives for preservation", "The vast majority of Air Force records"]}
-    correctIndexes={[1,3,4]}
+    options={[
+      'Destroyed after a specific time period',
+      'Has enduring historical value',
+      'Held anywhere from 1 day to 100 years',
+      'Kept forever',
+      'Transferred to National Archives for preservation',
+      'The vast majority of Air Force records',
+    ]}
+    correctIndexes={[1, 3, 4]}
   />
-<br />
-    <QuestionBlock
+  <br />
+  <QuestionBlock
     client:load
     id="q6"
     question="Emergency Operating records and Legal and Financial Rights records are considered _____."
-    options={["Non-Records", "Essential Records", "Temporary Records", "Operational Records"]}
+    options={['Non-Records', 'Essential Records', 'Temporary Records', 'Operational Records']}
     correctIndexes={[1]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q7"
     question="Which of the following shows the record lifecycle phases in the appropriate sequence?"
-    options={["Creation, Maintenance and Use, Disposition", "Maintenance and Use, Creation, Disposition", "Disposition, Creation, Maintenance and Use", "Maintenance and Use, Disposition, Creation"]}
+    options={[
+      'Creation, Maintenance and Use, Disposition',
+      'Maintenance and Use, Creation, Disposition',
+      'Disposition, Creation, Maintenance and Use',
+      'Maintenance and Use, Disposition, Creation',
+    ]}
     correctIndexes={[0]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q8"
     question="To be considered an official record the document must be _____."
-    options={["drafted and routed", "filed, used, or printed", "signed, approved, or relesased", "retrieved, disseminated, or duplicated"]}
+    options={[
+      'drafted and routed',
+      'filed, used, or printed',
+      'signed, approved, or relesased',
+      'retrieved, disseminated, or duplicated',
+    ]}
     correctIndexes={[2]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q9"
     question="An action that requires you to search for information and prevent it from being destroyed until the freeze is lifted is known as a _____."
-    options={["Records Hold", "Litigation Hold", "Litigation Freeze", "Records Discovery"]}
+    options={['Records Hold', 'Litigation Hold', 'Litigation Freeze', 'Records Discovery']}
     correctIndexes={[1]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q10"
     question="At a minimum, members leaving federal service require permission from their records professional to remove documents, with the exception of _____."
-    options={["Extra Copies", "Non-Records", "Official Records", "Personal Documents"]}
+    options={['Extra Copies', 'Non-Records', 'Official Records', 'Personal Documents']}
     correctIndexes={[3]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q11"
     question="When responding to litigation holds, FOIA requests, investigations, or inquiries you must provide all responsive _____."
-    options={["messages", "messages and emojis", "messages and attachments", "messages, attachments, and emojis"]}
+    options={[
+      'messages',
+      'messages and emojis',
+      'messages and attachments',
+      'messages, attachments, and emojis',
+    ]}
     correctIndexes={[3]}
   />
-<br />
+  <br />
   <QuestionBlock
     client:load
     id="q12"
     question="Once texts or electronic messages are assessed as being official records, how long do you have to transfer them to the office repository?"
-    options={["24 hours", "48 hours", "5 duty days", "10 duty days"]}
+    options={['24 hours', '48 hours', '5 duty days', '10 duty days']}
     correctIndexes={[1]}
   />
+  <br />
 </div>
 
 ---

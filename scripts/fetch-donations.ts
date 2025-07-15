@@ -3,9 +3,9 @@ import { google } from 'googleapis';
 
 // Paste your full service account JSON here:
 const serviceAccount = {
-  type: "service_account",
-  project_id: "bmc-donations",
-  private_key_id: "2115ab634a4386a3f7bf7c25ee872c4520c50412",
+  type: 'service_account',
+  project_id: 'bmc-donations',
+  private_key_id: '2115ab634a4386a3f7bf7c25ee872c4520c50412',
   private_key: `-----BEGIN PRIVATE KEY-----
 MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCsHbnT48OfklfJ
 DKDPc2CvqzNBecTBbngQaPB+hrSdxiFJUV+mfy3A404zGe2wb+/PsiSJqaKSoHMl
@@ -34,7 +34,7 @@ fyfFfFvxE5Kchc+i1FVlpnFIZWI9Y8PBilpNJAqicQKBgGyjv075uaYGZjli/s7X
 W3T48wmsWPfO1oxhJY9WnhYLJBIhf/OZuedpwIZZHcpmdo9b1uD3t2Bd/W1lBI8R
 RbKcyZ/PldCFoL1nY10LoRFi
 -----END PRIVATE KEY-----`,
-  client_email: "quickturn-cbt@bmc-donations.iam.gserviceaccount.com"
+  client_email: 'quickturn-cbt@bmc-donations.iam.gserviceaccount.com',
 };
 
 // Replace with your actual Google Sheet ID:
@@ -59,7 +59,7 @@ async function main() {
   });
 
   const rows = res.data.values || [];
-  const amounts = rows.map(row => parseFloat(row[0])).filter(x => !isNaN(x));
+  const amounts = rows.map((row) => parseFloat(row[0])).filter((x) => !isNaN(x));
   const total = amounts.reduce((sum, val) => sum + val, 0);
 
   const output = { total };
@@ -67,7 +67,7 @@ async function main() {
   console.log('✅ donations.json updated:', output);
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error('❌ Error:', err);
   process.exit(1);
 });
