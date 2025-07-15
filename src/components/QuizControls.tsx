@@ -4,8 +4,8 @@ export default function QuizControls() {
     font-semibold rounded-md shadow border border-white dark:border-black transition`;
 
   return (
-    <div className="sticky top-4 z-10 flex justify-end pr-4 sm:pr-8 md:pr-16">
-      <div className="flex flex-col sm:flex-row gap-2 bg-transparent p-0 m-0">
+    <div className="sticky top-4 z-10 flex justify-center">
+      <div className="flex flex-row gap-2">
         <button
           onClick={() => window.dispatchEvent(new Event('revealAllQuestions'))}
           className={sharedButtonClasses}
