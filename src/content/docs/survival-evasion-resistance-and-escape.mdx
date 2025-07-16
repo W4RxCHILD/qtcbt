@@ -1,8 +1,428 @@
 ---
-title: Survival, Evasion, Resistance, and Escape
-description: Survival, Evasion, Resistance, and Escape
+title: Survival Evasion Resistance And Escape
+description: Survival Evasion Resistance And Escape
 ---
 
 import QuestionBlock from '../../components/QuestionBlock.tsx';
+import QuizControls from '../../components/QuizControls.tsx';
 import '../../styles/tailwind.css';
 import BmcPopup from '../../components/BmcPopup';
+
+<QuizControls client:load />
+
+<div className="space-y-1 max-w-none">
+  <QuestionBlock
+    client:load
+    id="q1"
+    question="Which evasion aids can assist you with making contact with the local population? (Select all that apply)"
+    options={['Pointee-Talkee', 'Blood Chit', 'Signaling devices', 'Camouflage']}
+    correctIndexes={[0, 1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q2"
+    question="Should your captors provide an opportunity to communicate using written, oral, or video means, you should:"
+    options={[
+      'Not provide information regarding physical condition',
+      'Organize to meet captives needs',
+      'Provide proof of life',
+      'Be nice to the captors to improve your treatment',
+    ]}
+    correctIndexes={[2]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q3"
+    question="Continuously learning about your captivity environment and the captor is known as ___________________."
+    options={[
+      'situational awareness',
+      'personal protection',
+      'coping skills',
+      'captivity resolution',
+    ]}
+    correctIndexes={[0]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q4"
+    question="What are some methods to purify water? (Select all that apply)"
+    options={[
+      'Filtering water with tightly woven material',
+      'Purifying with a commercial micro filter',
+      'Chemically treating water with chlorine or iodine',
+      'Boiling vigorously for at least one minute',
+    ]}
+    correctIndexes={[1, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q5"
+    question="The two types of reporting isolating events are observer-reported and media reporting."
+    options={['False', 'True']}
+    correctIndexes={[0]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q6"
+    question="Upon your release, a DoD Public Affairs Officer (PAO) will be available to help you. Their goal is to ____________________________. (Select all that apply)"
+    options={[
+      'help you regain control over your life',
+      'coordinate your interactions with the media',
+      'get the true story out to the world',
+      'protect any classified information',
+    ]}
+    correctIndexes={[0, 1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q7"
+    question="The Evasion Plan of Action (EPA) provides recovery forces the following information should you become isolated. (Select all that apply)"
+    options={[
+      'Your evasion intentions and key recovery information',
+      'It helps them to anticipate your actions and intentions',
+      'The disposition of hostile forces',
+      'Details the methods and procedures you intend to use to communicate with recovery forces',
+    ]}
+    correctIndexes={[0, 1, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q8"
+    question="The three basic food sources during isolation are packed rations, animals and insects, and plants."
+    options={['True', 'False']}
+    correctIndexes={[0]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q9"
+    question="Limiting the amount of personal information available to others includes reducing your __________________ footprint, and personal information items not required for your operational mission such as credit cards and other identifiable items in yhour wallet or purse."
+    options={['social media', 'carbon', 'mailing list', 'organizational membership']}
+    correctIndexes={[0]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q10"
+    question="During operations outside declared hostilities, you may delay contact with local authorities."
+    options={['True', 'False']}
+    correctIndexes={[0]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q11"
+    question="In the event of isolation during operations other than war, the reasons to delay contact with legitimate authorities include. (Select all that apply)"
+    options={[
+      'Contact friendly forces',
+      'Lack of control',
+      'Gain situational awareness',
+      'Prevent recognition',
+    ]}
+    correctIndexes={[0, 2]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q12"
+    question="The Principles of Behavior outline your moral obligations and behavioral expectations from isolation to captivity resolution."
+    options={['False', 'True']}
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q13"
+    question="What should you do during USG negotiations for your release? (Select all that apply)"
+    options={[
+      'Sign a parole agreement for release',
+      'Maintain your honor and communicate your innocence',
+      'Have faith in the USG',
+      'Remain professional and avoid exploitation',
+    ]}
+    correctIndexes={[1, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q14"
+    question="Which of the following are used to control bleeding? (Select all that apply)"
+    options={[
+      'Use a tourniquet',
+      'Apply direct pressure',
+      'Clean with water',
+      'Elevate and immobilize',
+    ]}
+    correctIndexes={[0, 1, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q15"
+    question="Resistance to exploitation is a BATTLE OF WITS with your captor."
+    options={['True', 'False']}
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q16"
+    question="Which of the following are criteria for selecting a shelter site? (Select all that apply)"
+    options={[
+      'The area is large enough to stand in',
+      'Provides natural protection from environment,hazards, and threats',
+      'The area is large enough for you and your equipment',
+      'Sufficient materials are available for constructing a shelter',
+    ]}
+    correctIndexes={[1, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q17"
+    question="Leaving evidence of your presence supports U.S. Government effort to locate, identify and recover you."
+    options={['True', 'False']}
+    correctIndexes={[0]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q18"
+    question="One way to gain acceptance from the local population after making contact is to discuss the similarities between your religions. This helps to show you are peaceful and mean them no harm."
+    options={['True', 'False']}
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q19"
+    question="Which Principle of Behavior expects you to resist adversary exploitation despite the pervasive physical and environmental control retained by the captor?"
+    options={['Principle I', 'Principle II', 'Principle III', 'Principle IV']}
+    correctIndexes={[3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q20"
+    question="Actions to take when capture is imminent include. (Select all that apply)"
+    options={[
+      'Leave evidence of presence at capture point',
+      'Sanitize personal or sensitive materials',
+      'Try to retain your personal cell phone',
+      'Communicate your situation',
+    ]}
+    correctIndexes={[0, 1, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q21"
+    question="The Principles of Behavior describe the _______________ for DoD civilian personnel when held against their will by entities hostile to the U.S."
+    options={['civilian directive', 'moral obligations', 'moral guide', 'direct order']}
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q22"
+    question="You should limit your communication with the captor to which of the following? (Select all that apply)"
+    options={[
+      'Identify yourself',
+      'Ask to be returned to U.S. control',
+      'Address health and welfare concerns',
+      'State the innocent circumstances leading to capture',
+    ]}
+    correctIndexes={[0, 1, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q23"
+    question="What are pre-deployment document requires you to provide, four personal authentication statements, full front and right side photographs, and fingerprints?"
+    options={[
+      'DD Form 1833 Isolated Personnel Report (ISOPREP)',
+      'Defense Legal Next of Kin Notification Form',
+      'Defense Enrolment Eligibility Reporting System (DEERS)',
+      'DD Form 2 Military ID card',
+    ]}
+    correctIndexes={[0]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q24"
+    question="Identify steps in building a fire. (Select all that apply)"
+    options={[
+      'Once the tinder is burning, add large amounts of fuel',
+      'Perepare adequate amounts of tinder, kindling, and fuel',
+      'Carefully place small, dry kindling over the burning tinder',
+      'Use a platform',
+    ]}
+    correctIndexes={[1, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q25"
+    question="Tactical hand-held radio transeivers, cell phones, satellite phones, and personal locator beacons (PLBs) are devices you could use for electronic communication."
+    options={['True', 'False']}
+    correctIndexes={[0]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q26"
+    question="What are some de-escalation strategies personnel can use to discourage captor violence?"
+    options={[
+      'Surprise the captors',
+      'Speak quickly',
+      'Maintain a low profile',
+      'Be conscious of your body language',
+    ]}
+    correctIndexes={[2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q27"
+    question="The weakened state of the captives' ______________ reduces their capacity to collectively resist adversary exploitation efforts. Acceptance of special favors also provides an opening for an adversary's future exploitation efforts against you."
+    options={['military bearing', 'health', 'support', 'organization']}
+    correctIndexes={[3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q28"
+    question="Identify some posture and resistance constants of an effective resistance posture. (Select all that apply)"
+    options={['Bounce back', 'Respond quickly', 'Stall', 'Control emotions']}
+    correctIndexes={[0, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q29"
+    question="During a hole-up what is your primary concern?"
+    options={['Security', 'Rest', 'Fire', 'Food and water']}
+    correctIndexes={[0]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q30"
+    question="What evasion aid is tailored to cover an individual operational area, combining standard navigation charts and maps with evasion and survival information?"
+    options={['Handheld GPS', 'Evasion chart', 'Pointee-Talkee', 'Blood chit']}
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q31"
+    question="When questioned, should you become a prisoner of war, the Geneva Conventions, requires, but does not prohibit, you from identifying yourself to your captors. Which Principle of Behavior does the statement above refer?"
+    options={['Principle I', 'Principle II', 'Principle III', 'Principle IV']}
+    correctIndexes={[3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q32"
+    question="As part of your resistance posture you should portray _________ at all times."
+    options={['arrogance', 'innocence', 'confidence', 'knowledge']}
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q33"
+    question="When providing proof of life what information should you include? (Select all that apply)"
+    options={[
+      'A verifiable date',
+      'Your religious beliefs',
+      'Your health and welfare',
+      "You and your fellow captives' identities",
+    ]}
+    correctIndexes={[0, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q34"
+    question="Which Principle of Behavior articulates: If held in captivity you should communicate and organize with the community of fellow United States Government and allied captives and avoid actions that may harm them?"
+    options={['Principle I', 'Principle II', 'Principle III', 'Principle IV']}
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q35"
+    question="An effective memory tool that can assist you with using situational awareness during an isolating event is the acronym PAID-E, which stands for perceive, ________, interpret, decide, and execute."
+    options={['anticipate', 'alternate', 'analyze', 'acquire']}
+    correctIndexes={[2]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q36"
+    question="Selecting a signaling site and putting your signal in a suitable location is critical. A signaling site is defined as any site, based on yur situation that enhances signaling efforts and the likelihood for the signal to be detected by friendly forces. What is a signaling site criterion? (Select all that apply)"
+    options={[
+      'Site hidden from potential enemy observation and ground fire',
+      'Sufficient mateials for signal construction',
+      'Site near major transportation route for access of recovery vehicle',
+      'Recovery possible from/near site',
+    ]}
+    correctIndexes={[0, 1, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q37"
+    question="You should attempt to provide proof of life during any audio or video recording or written documents?"
+    options={['True', 'False']}
+    correctIndexes={[0]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q38"
+    question="What are the goals of using a disguise? (Select all that apply)"
+    options={[
+      'Pass as a Red Cross member',
+      'Keep warm',
+      'Prevent recognition',
+      'Pass initial scrutiny',
+    ]}
+    correctIndexes={[2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q39"
+    question="When are personnel ALWAYS authorized to escape?"
+    options={[
+      "When the food provided isn't to U.S. standards",
+      'After one month of captivity in Peacetime Governmental Detention (PGD)',
+      'When facing harsh interrogations',
+      'When in physical or mortal danger',
+    ]}
+    correctIndexes={[3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q40"
+    question="During a direct action recovery, you should pick up a weapon and assist the recovery team."
+    options={['True', 'False']}
+    correctIndexes={[1]}
+  />
+  <br />
+</div>
+
+---
+
+<BmcPopup client:only="react" />
