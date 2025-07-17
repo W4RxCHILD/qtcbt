@@ -1,4 +1,342 @@
 ---
 title: Force Protection
-description: Template
+description: Force Protection
 ---
+
+import QuestionBlock from '../../components/QuestionBlock.tsx';
+import QuizControls from '../../components/QuizControls.tsx';
+import "../../styles/tailwind.css";
+import BmcPopup from '../../components/BmcPopup';
+
+<QuizControls client:load />
+
+<div className="space-y-1 max-w-none">
+  <QuestionBlock
+    client:load
+    id="q1"
+    question="True or False: Terrorism is the spontaneous use of violence; it does not include threats of violence to cause fear."
+    options={
+      [
+      "True",
+      "False"
+      ]
+    }
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q2"
+    question="Scenario. TSgt Brown is assigned overseas and is planning a vacation to a nearby country. She remembers from her Force Protection training that there are eight factors she should consider to understand terrorist threats. From the following list, choose THREE terrorist threat factors that TSgt Brown should consider before going on her vacation."
+    options={
+      [
+      "Are there any terrorist groups in the area?",
+      "Will the local population warn Americans?",
+      "How many members are there in a known terrorist group?",
+      "Is the reported terrorist group predictable?"
+      ]
+    }
+    correctIndexes={[0, 1, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q3"
+    question="What are the terrorism threat levels regional and local US commander assign for specific personnel, family members, units, and installations? Select ALL that apply."
+    options={
+      [
+      "Alpha",
+      "Bravo",
+      "Charlie",
+      "Low",
+      "Moderate",
+      "Significant",
+      "High"
+      ]
+    }
+    correctIndexes={[3, 4, 5, 6]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q4"
+    question="What FPCON level applies when specific information is received about an increased, more predicatable terrorist threat regarding an unknown installation and requiring steps be taken to deter terrorist planning that may effect daily operations?"
+    options={
+      [
+      "Alpha",
+      "Bravo",
+      "Charlie",
+      "Delta",
+      "Normal"
+      ]
+    }
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q5"
+    question="How do terrorists select their targets? Select ALL that apply."
+    options={
+      [
+      "Location",
+      "Opportunity",
+      "Vulnerable groups",
+      "Perception of importance"
+      ]
+    }
+    correctIndexes={[0, 1, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q6"
+    question="SrA Rios is planning to take a train from Germany to Italy for vacation. What antiterrorism practices should be adhere to in an effort to reduce his chances of being singled out for an attack? Select ALL that apply."
+    options={
+      [
+      "Report any suspicious activity.",
+      "Wear his military uniform on the train.",
+      "Keep his compartment door locked at all times.",
+      "Have a plan to move from one secure location to another.",
+      "Accept food and drink from other passengers only after he has gotton to know them."
+      ]
+    }
+    correctIndexes={[0, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q7"
+    question="TSgt Holland suspects she may have been exposed to a biological agent, what steps should she take? Select ALL that apply."
+    options={
+      [
+      "Cover her mouth and nose.",
+      "Get away in a hurry and warn others.",
+      "Seek medical attention.",
+      "Use soa and water to wash areas suspected of exposure."
+      ]
+    }
+    correctIndexes={[0, 1, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q8"
+    question="True or False: Active shooter is one or more subjects who partcipate in a shooting, random or systematic, with the intent to continuously harm others."
+    options={
+      [
+      "True",
+      "False"
+      ]
+    }
+    correctIndexes={[0]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q9"
+    question="Which scenario is an example of active shooter?"
+    options={
+      [
+      "A SNCO shoots his wife in base housing after work, then sits and waits for law enforcement.",
+      "A civilian contractor pulls out a weapon during an office meeting, puts it in his mouth, and pulls the trigger.",
+      "A disgruntled NCO, who is fed up with the promotion system, walks through his work center discharging an automatic weapon trying to kill everyone in sight.",
+      "An Airman goes to work with his gun, keeps it hidden in his backpack before showing a coworker his new prized possession. The gun discharges by accident, killing his coworker."
+      ]
+    }
+    correctIndexes={[2]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q10"
+    question="True or False: There are NEVER any early indicators of a possible active shooter."
+    options={
+      [
+      "True",
+      "False"
+      ]
+    }
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q11"
+    question="Early recognition of a threat can prevent an active shooter indident. Which of the following situations may be pre-attack indicators? Select ALL that Apply."
+    options={
+      [
+      "Aggression toward coworkers",
+      "Repeated violations of policies",
+      "Presence of unauthorized weapons",
+      "Talk of happy marriages and family",
+      "Anti-American statements"
+      ]
+    }
+    correctIndexes={[0, 1, 2, 4]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q12"
+    question="True or False: When first responders approach an active shooter scene, shout out to them so they know your barricade location and wave them over to you."
+    options={
+      [
+      "True",
+      "False"
+      ]
+    }
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q13"
+    question="When first responders arrive at an active shooter scene, you have a responsibility to support their efforts. How can you support the first responders? Select ALL that apply."
+    options={
+      [
+      "Raise your hands and keep them visible.",
+      "Wave your arms to get their attention.",
+      "Remain calm and follow instructions.",
+      "Avoid pointing, yelling, and screaming."
+      ]
+    }
+    correctIndexes={[0, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q14"
+    question="True or False: An active shooter's physical description is not relevant when providing information to first responders; instead, only provide the shooter's location, number of weapons, and types of weapons."
+    options={
+      [
+      "True",
+      "False"
+      ]
+    }
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q15"
+    question="In a deployed environment, you must REACT. What does the &quot;C&quot; in REACT represent?"
+    options={
+      [
+      "Communicate with others near and far.",
+      "Convince the shooter to surrender.",
+      "Compel personnel to flee.",
+      "Commit to your actions."
+      ]
+    }
+    correctIndexes={[3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q16"
+    question="In a deployed environment, you must REACT. What does the &quot;R&quot; in REACT represent?"
+    options={
+      [
+      "Re-evaluate the situation.",
+      "Respond to the situation.",
+      "Compel personnel to flee.",
+      "Commit to your actions."
+      ]
+    }
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q17"
+    question="What hostile intelligence collection method is the process of obtaining military, political, commercial, or secret information by spies, secret agents, or illegal monitoring devices?"
+    options={
+      [
+      "Sabotage",
+      "Espionage",
+      "Insider Threat",
+      "Foreign Intelligence Agencies"
+      ]
+    }
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q18"
+    question="When Airmen implement effective counterintelligence measures, what are the benefits? Select ALL that apply."
+    options={
+      [
+      "Information is protected from foreign intelligence agents.",
+      "Gathered intelligence protects against espionage.",
+      "Foreign powers are denied access to vital US technology.",
+      "Assassination attempts on behalf of international terrorists are thwarted."
+      ]
+    }
+    correctIndexes={[0, 1, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q19"
+    question="Which situations should be reported? Select ALL that apply."
+    options={
+      [
+      "Foreign country visits by a military member on authorized leave",
+      "Contact with foreign diplomatic offices for other than official duties",
+      "Unauthorized attempts to bypass automated information system security devices",
+      "Retrieval of sensitive information consistent with duty requirements by civilian personnel"
+      ]
+    }
+    correctIndexes={[1, 2, 3]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q20"
+    question="What manipulation technique should be reported when an FIE operative develops a sexual relationship with an insider to draw in the target?"
+    options={
+      [
+      "Elicitation",
+      "Honey pot",
+      "Solicitation",
+      "Sympathizer"
+      ]
+    }
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q21"
+    question="What manipulation technique should be reported when an FIE threatens to disclose his/her relationship with an insider?"
+    options={
+      [
+      "Bribery",
+      "Blackmail",
+      "Solicitation",
+      "Sympathizer"
+      ]
+    }
+    correctIndexes={[1]}
+  />
+  <br />
+  <QuestionBlock
+    client:load
+    id="q22"
+    question="True or False: You should report any hostile intelligence threats, incidents, or indicators to AFOSI immediately."
+    options={
+      [
+      "True",
+      "False"
+      ]
+    }
+    correctIndexes={[0]}
+  />
+  <br />
+</div>
+
+---
+
+<BmcPopup client:only="react" />

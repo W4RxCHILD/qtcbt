@@ -29,6 +29,10 @@ export default defineConfig({
               label: 'Survival, Evasion, Resistance, and Escape',
               slug: 'survival-evasion-resistance-and-escape',
             },
+            {
+              label: 'Force Protection',
+              slug: 'force-protection',
+            },
           ],
         },
         {
@@ -38,7 +42,6 @@ export default defineConfig({
               label: 'Cyber Awareness Challenge 2025 (Knowledge Check Option)',
               slug: 'cyber-awareness-challenge-2025-knowledge-check-option',
             },
-            { label: 'Force Protection', slug: 'force-protection' },
           ],
         },
       ],
